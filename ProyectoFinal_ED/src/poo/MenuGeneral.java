@@ -57,6 +57,11 @@ public class MenuGeneral extends javax.swing.JFrame {
         btnAccesoTrabajador.setBackground(new java.awt.Color(255, 255, 51));
         btnAccesoTrabajador.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnAccesoTrabajador.setText("Acceso Trabajador");
+        btnAccesoTrabajador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAccesoTrabajadorActionPerformed(evt);
+            }
+        });
 
         btnAccesoAdmin.setBackground(new java.awt.Color(51, 153, 255));
         btnAccesoAdmin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -162,6 +167,10 @@ public class MenuGeneral extends javax.swing.JFrame {
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void btnAccesoTrabajadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccesoTrabajadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAccesoTrabajadorActionPerformed
 
     /**
      * @param args the command line arguments

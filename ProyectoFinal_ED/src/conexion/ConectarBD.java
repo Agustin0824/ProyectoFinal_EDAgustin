@@ -18,6 +18,6 @@ public class ConectarBD {
         DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
         cn = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:XE","admin_se","uacm123");
         stmt = cn.createStatement();
-        JOptionPane.showMessageDialog(null, "Conexion a BD OK \n\nAgustin");
+        JOptionPane.showMessageDialog(null, "Conexion correcta a BD OK \n\nAgustin");
     }//termina metodo conectar
 }

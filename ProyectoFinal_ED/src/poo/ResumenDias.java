@@ -13,6 +13,7 @@ public class ResumenDias extends javax.swing.JFrame {
     
     public ResumenDias() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     

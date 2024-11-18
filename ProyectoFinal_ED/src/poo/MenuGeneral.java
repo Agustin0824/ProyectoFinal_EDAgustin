@@ -2,6 +2,7 @@
 package poo;
 
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 
 public class MenuGeneral extends javax.swing.JFrame {
@@ -10,6 +11,7 @@ public class MenuGeneral extends javax.swing.JFrame {
     
     public MenuGeneral() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     
@@ -25,17 +27,18 @@ public class MenuGeneral extends javax.swing.JFrame {
         btnAccesoTrabajador = new javax.swing.JButton();
         btnAccesoAdmin = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jSeparator2 = new javax.swing.JPopupMenu.Separator();
-        jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        mnuOpciones = new javax.swing.JMenu();
+        mnuIAdministrador = new javax.swing.JMenuItem();
+        mnuITrabajador = new javax.swing.JMenuItem();
+        mnuIInforme = new javax.swing.JMenuItem();
+        sp1 = new javax.swing.JPopupMenu.Separator();
+        sp2 = new javax.swing.JPopupMenu.Separator();
+        mnuISalir = new javax.swing.JMenuItem();
+        mnuVersion = new javax.swing.JMenu();
+        mnuIAcerca = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sistema de Registro Inicio Agustin");
 
         panInicio.setBackground(new java.awt.Color(51, 153, 0));
 
@@ -113,40 +116,55 @@ public class MenuGeneral extends javax.swing.JFrame {
         jMenuBar1.setBackground(new java.awt.Color(102, 153, 0));
         jMenuBar1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(102, 153, 0)));
 
-        jMenu2.setText("Opciones");
+        mnuOpciones.setText("Opciones");
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem1.setText("Administrador");
-        jMenu2.add(jMenuItem1);
-
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem2.setText("Trabajador");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        mnuIAdministrador.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        mnuIAdministrador.setText("Administrador");
+        mnuIAdministrador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                mnuIAdministradorActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem2);
+        mnuOpciones.add(mnuIAdministrador);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem3.setText("Informe de Salario");
-        jMenu2.add(jMenuItem3);
-        jMenu2.add(jSeparator2);
-        jMenu2.add(jSeparator1);
+        mnuITrabajador.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        mnuITrabajador.setText("Trabajador");
+        mnuITrabajador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuITrabajadorActionPerformed(evt);
+            }
+        });
+        mnuOpciones.add(mnuITrabajador);
 
-        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem5.setText("Salir");
-        jMenu2.add(jMenuItem5);
+        mnuIInforme.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        mnuIInforme.setText("Informe de Salario");
+        mnuIInforme.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuIInformeActionPerformed(evt);
+            }
+        });
+        mnuOpciones.add(mnuIInforme);
+        mnuOpciones.add(sp1);
+        mnuOpciones.add(sp2);
 
-        jMenuBar1.add(jMenu2);
+        mnuISalir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        mnuISalir.setText("Salir");
+        mnuISalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuISalirActionPerformed(evt);
+            }
+        });
+        mnuOpciones.add(mnuISalir);
 
-        jMenu3.setText("Versión");
+        jMenuBar1.add(mnuOpciones);
 
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem4.setText("Acerca de ...");
-        jMenu3.add(jMenuItem4);
+        mnuVersion.setText("Versión");
 
-        jMenuBar1.add(jMenu3);
+        mnuIAcerca.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        mnuIAcerca.setText("Acerca de ...");
+        mnuVersion.add(mnuIAcerca);
+
+        jMenuBar1.add(mnuVersion);
 
         setJMenuBar(jMenuBar1);
 
@@ -164,13 +182,32 @@ public class MenuGeneral extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    private void mnuITrabajadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuITrabajadorActionPerformed
+        Trabajadores abrirVentTrabajadores = new Trabajadores(); //llamado de la clase
+        abrirVentTrabajadores.setVisible(true);//visualiza ventana
+        this.hide();//oculta ventana anterior
+    }//GEN-LAST:event_mnuITrabajadorActionPerformed
 
     private void btnAccesoTrabajadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccesoTrabajadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAccesoTrabajadorActionPerformed
+
+    private void mnuIAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuIAdministradorActionPerformed
+        Administradores abrirVentAdministradores = new Administradores(); //llamado de la clase
+        abrirVentAdministradores.setVisible(true);//visualiza ventana
+        this.hide();//oculta ventana anterior
+    }//GEN-LAST:event_mnuIAdministradorActionPerformed
+
+    private void mnuIInformeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuIInformeActionPerformed
+        ResumenDias abrirVentResumDias = new ResumenDias(); //llamado de la clase
+        abrirVentResumDias.setVisible(true);//visualiza ventana
+        this.hide();//oculta ventana anterior
+    }//GEN-LAST:event_mnuIInformeActionPerformed
+
+    private void mnuISalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuISalirActionPerformed
+        System.exit(0);//cierra ventana
+        JOptionPane.showMessageDialog(null, "Saliendo del sistema, Todos los cambios se han guardado con exito!...");
+    }//GEN-LAST:event_mnuISalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,20 +247,20 @@ public class MenuGeneral extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAccesoAdmin;
     private javax.swing.JButton btnAccesoTrabajador;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JPopupMenu.Separator jSeparator1;
-    private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JLabel lblImgLogo;
     private javax.swing.JLabel lblTexto;
     private javax.swing.JLabel lblTexto2;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JMenuItem mnuIAcerca;
+    private javax.swing.JMenuItem mnuIAdministrador;
+    private javax.swing.JMenuItem mnuIInforme;
+    private javax.swing.JMenuItem mnuISalir;
+    private javax.swing.JMenuItem mnuITrabajador;
+    private javax.swing.JMenu mnuOpciones;
+    private javax.swing.JMenu mnuVersion;
     private javax.swing.JPanel panInicio;
+    private javax.swing.JPopupMenu.Separator sp1;
+    private javax.swing.JPopupMenu.Separator sp2;
     // End of variables declaration//GEN-END:variables
 }
